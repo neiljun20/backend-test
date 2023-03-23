@@ -6,7 +6,7 @@ module.exports = sequelize.define('user', {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     allowNull: false,
-    primaryKey: true,
+    primaryKey: true
   },
   userName: {
     type: DataTypes.STRING,

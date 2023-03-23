@@ -5,7 +5,10 @@ const {
   DB_NAME,
   DB_USER,
   DB_PASSWORD,
-  DB_HOST
+  DB_HOST,
+  REDIS_HOST,
+  REDIS_PORT,
+  REDIS_PASSWORD
 } = process.env;
 
 module.exports = {
@@ -13,5 +16,8 @@ module.exports = {
   DB_NAME,
   DB_USER,
   DB_PASSWORD,
-  DB_HOST
+  DB_HOST,
+  REDIS_HOST,
+  REDIS_PORT,
+  REDIS_PASSWORD
 };

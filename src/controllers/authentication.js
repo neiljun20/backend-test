@@ -1,13 +1,16 @@
-const userService = require('../services/user');
+const authenticationService = require('../services/authentication');
 
-exports.newAccount = async (req, res) => {
+exports.login = async (req, res) => {
+  let code = 500;
+  let msg = "login failed";
 
-  await userService.createUser(req.body);
+  const { tokebn } = await authenticationService.login(req.body);
+  
+  if(!tokebn){
+     res.status(code).send({ code, msg });
+     return;
+  }
 
   code = 200;
-  msg = "OK";
-
-  res.status(code).send({ code, msg });
-
-};
-
+  res.status(code).send({ code, tokebn });
+}
