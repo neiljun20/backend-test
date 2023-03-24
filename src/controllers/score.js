@@ -10,7 +10,7 @@ exports.create = async (req, res) => {
     return;
   }
   
-  await scoreService.setScore(req.user, req.body.myScore);
+  await scoreService.setScore(req.user.userName, req.body.myScore);
   code = 200;
   msg = "OK";
   res.status(code).send({ code, msg });
