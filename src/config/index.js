@@ -1,4 +1,6 @@
-require('dotenv').config();
+/* eslint-env node */
+
+require("dotenv").config();
 
 const {
   PORT,

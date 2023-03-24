@@ -1,4 +1,4 @@
-const redis = require('./redis');
+const redis = require("./redis");
 
 /**
  * @param string userName
@@ -36,5 +36,5 @@ exports.leaderBoard = async (userName) => {
   return {
     mine: {myScore, myRank},
     rank
-  }
-}
+  };
+};

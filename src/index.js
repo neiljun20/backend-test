@@ -1,13 +1,15 @@
-const { PORT } = require('./config');
-const app = require('./app');
-const redis = require('./utils/redis');
+/* eslint-env node */
+
+const { PORT } = require("./config");
+const app = require("./app");
+const redis = require("./utils/redis");
 
 try{
 
-  redis.on('error', err => console.error('Redis Error', err));
+  redis.on("error", err => console.error("Redis Error", err));
 
   redis.connect(() => {
-    console.log('Redis connected');
+    console.log("Redis connected");
   });
 
   app.listen(PORT, () => {
@@ -20,4 +22,3 @@ try{
   process.exit(1);
   
 }
-

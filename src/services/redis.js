@@ -1,4 +1,4 @@
-const redis = require('../utils/redis');
+const redis = require("../utils/redis");
 
 /**
  * @param string token
@@ -25,28 +25,28 @@ exports.findToken = async (token) => {
  * @return void
  */
 exports.setScoreInLeaderboard = async (userName, score) => {
-  await redis.zadd('leaderboard', score, userName);
-}
+  await redis.zadd("leaderboard", score, userName);
+};
 
 /**
  * @param string userName
  * @return int
  */
 exports.getScoreInLeaderboard = async (userName) => {
-  return await redis.zscore('leaderboard', userName);
-}
+  return await redis.zscore("leaderboard", userName);
+};
 
 /**
  * @param string userName
  * @return int
  */
 exports.getRankInLeaderboard = async (userName) => {
-  return await redis.zrevrank('leaderboard', userName) + 1;
-}
+  return await redis.zrevrank("leaderboard", userName) + 1;
+};
 
 /**
  * @return array
  */
 exports.getTopThreeUsers = async () => {
-  return await redis.zrevrange('leaderboard', 0, 2, 'WITHSCORES');
-}
+  return await redis.zrevrange("leaderboard", 0, 2, "WITHSCORES");
+};

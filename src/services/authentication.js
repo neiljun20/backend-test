@@ -1,9 +1,9 @@
-const userService = require('./user');
-const redisService = require('./redis');
-const bcrypt = require('bcrypt');
-const shortid = require('shortid');
+const userService = require("./user");
+const redisService = require("./redis");
+const bcrypt = require("bcrypt");
+const shortid = require("shortid");
 
-shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
+shortid.characters("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@");
 
 /**
  * @param object reqUser
@@ -33,6 +33,6 @@ exports.login = async (reqUser) => {
 
   return {
     tokebn
-  }
+  };
   
-}
+};

@@ -1,5 +1,4 @@
-const userService = require('../services/user');
-const redisService = require('../services/redis');
+const redisService = require("../services/redis");
 
 exports.validateInput = async (req, res, next) => {
   
@@ -33,4 +32,4 @@ exports.validateToken = async (req, res, next) => {
   req.user = user;
   
   next();
-}
+};

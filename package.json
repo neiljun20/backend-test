@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix"
   },
   "author": "Neiljun Cataag <neiljuncataag@gmail.com>",
   "license": "ISC",
@@ -21,6 +23,7 @@
     "shortid": "^2.2.16"
   },
   "devDependencies": {
+    "eslint": "^8.36.0",
     "nodemon": "^2.0.22"
   }
 }

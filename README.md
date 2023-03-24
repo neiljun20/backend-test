@@ -15,3 +15,5 @@
 ### Commands
 * `pnpm start` - start the project in production mode
 * `pnpm dev` - start the project in development mode
+* `pnpm lint` - run code linting checks
+* `pnpm lint:fix` - automatically fix linting issues in the code

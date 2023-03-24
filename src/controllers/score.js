@@ -1,4 +1,4 @@
-const scoreService = require('../services/score');
+const scoreService = require("../services/score");
 
 exports.create = async (req, res) => {
 
