@@ -15,7 +15,7 @@ exports.create = async (req, res) => {
   await userService.createUser(req.body);
 
   code = 200;
-  msg = "OK"
+  msg = "OK";
 
   res.status(code).send({ code, msg });
 
