@@ -10,5 +10,6 @@ const scoreController = require('../controllers/score');
 router.post('/newAccount', authenticationMiddleware.validateInput, userController.create);
 router.post('/login', authenticationMiddleware.validateInput, authenticationController.login);
 router.post('/saveScore', authenticationMiddleware.validateToken, scoreController.create);
+router.post('/leaderBoard', authenticationMiddleware.validateToken, scoreController.leaderBoard);
 
 module.exports = router;

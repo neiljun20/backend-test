@@ -16,3 +16,12 @@ exports.create = async (req, res) => {
   res.status(code).send({ code, msg });
 
 };
+
+exports.leaderBoard = async (req, res) => {
+
+  const code = 200;
+  const data = await scoreService.leaderBoard(req.user.userName);
+
+  res.status(code).send({ code, data });
+
+};

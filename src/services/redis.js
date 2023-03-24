@@ -35,3 +35,18 @@ exports.setScoreInLeaderboard = async (userName, score) => {
 exports.getScoreInLeaderboard = async (userName) => {
   return await redis.zscore('leaderboard', userName);
 }
+
+/**
+ * @param string userName
+ * @return int
+ */
+exports.getRankInLeaderboard = async (userName) => {
+  return await redis.zrevrank('leaderboard', userName) + 1;
+}
+
+/**
+ * @return array
+ */
+exports.getTopThreeUsers = async () => {
+  return await redis.zrevrange('leaderboard', 0, 2, 'WITHSCORES');
+}
