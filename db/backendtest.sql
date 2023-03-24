@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2023 at 10:31 AM
+-- Generation Time: Mar 24, 2023 at 11:04 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -43,7 +43,9 @@ INSERT INTO `users` (`id`, `userName`, `userPwd`, `createdAt`, `updatedAt`) VALU
 (1, 'u1', '$2b$10$ELCCVO4xZxRv86RAroRvJeA4HgsiLUE6Cul9GTQj.nl7PSNEXJ1Cq', '2023-03-24 09:25:28', '2023-03-24 09:25:28'),
 (2, 'u2', '$2b$10$BzPmRNNHBRP4E/GjVbaAbegzhj16Fse.hX5Wqe0bdsqLXZDrnU7BC', '2023-03-24 09:25:33', '2023-03-24 09:25:33'),
 (3, 'u3', '$2b$10$zvY/4hyo0LzuiEmwqA8XaOAfjewF5DddGVyhuvu280zNbyu.XP0SW', '2023-03-24 09:25:38', '2023-03-24 09:25:38'),
-(4, 'testUser', '$2b$10$yjeSCmwt9Frd7xQUA9b1EOoC.3ydv/QSe8Qq63IvZwifT4H4blCsW', '2023-03-24 09:28:49', '2023-03-24 09:28:49');
+(4, 'testUser', '$2b$10$yjeSCmwt9Frd7xQUA9b1EOoC.3ydv/QSe8Qq63IvZwifT4H4blCsW', '2023-03-24 09:28:49', '2023-03-24 09:28:49'),
+(5, 'testUser2', '$2b$10$jZp3Z0E3RAiR.2.bH.RU3uRPQyIO2EqEBs2JiBtS/ncq41VEO4nYW', '2023-03-24 09:53:26', '2023-03-24 09:53:26'),
+(6, 'neil', '$2b$10$N7nx3mqRM/s5HVDtdQK9c.ydg7m15.wD/Foex3ljGL21kjnc/R1mO', '2023-03-24 09:56:37', '2023-03-24 09:56:37');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +66,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
