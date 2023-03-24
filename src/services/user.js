@@ -2,28 +2,34 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 
 /**
- * @param string
+ * @param string userName
  * @return object
  */
-exports.findByUserName = async (userName) => {
+const findByUserName = async (userName) => {
   return await User.findOne({
     where: { userName }
   });
 };
 
 /**
- * @param string
+ * @param string userName
  * @return bool
  */
-exports.isUserNameExist = async (userName) => {
+const isUserNameExist = async (userName) => {
   return await findByUserName(userName) ? true : false ;
 };
 
 /**
- * @param object
+ * @param object newUser
  * @return object
  */
-exports.createUser = async (newUser) => {
+const createUser = async (newUser) => {
   newUser.userPwd = await bcrypt.hash(newUser.userPwd, 10);
   return await User.create({ ...newUser });
+};
+
+module.exports = {
+  findByUserName,
+  isUserNameExist,
+  createUser
 };

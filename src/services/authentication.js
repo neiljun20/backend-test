@@ -6,7 +6,7 @@ const shortid = require('shortid');
 shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
 
 /**
- * @param object
+ * @param object reqUser
  * @return object
  */
 exports.login = async (reqUser) => {
@@ -26,7 +26,10 @@ exports.login = async (reqUser) => {
 
   tokebn = shortid.generate({length: 8});
 
-  redisService.setToken(tokebn, user.userName);
+  redisService.setToken(tokebn, {
+    id: user.id,
+    userName: user.userName
+  });
 
   return {
     tokebn

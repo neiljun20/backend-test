@@ -2,11 +2,12 @@ const redis = require('../utils/redis');
 
 /**
  * @param string token
- * @param string username
+ * @param object user
  * @return void
  */
-exports.setToken = (token, userName) => {
-  redis.setex(token, 300, userName);
+exports.setToken = (token, user) => {
+  user = JSON.stringify(user);
+  redis.setex(token, 300, user);
 };
 
 /**
@@ -14,5 +15,23 @@ exports.setToken = (token, userName) => {
  * @return object
  */
 exports.findToken = async (token) => {
-  return await redis.get(token);
+  const user = await redis.get(token);
+  return JSON.parse(user);
 };
+
+/**
+ * @param string userName
+ * @param int score
+ * @return void
+ */
+exports.setScoreInLeaderboard = async (userName, score) => {
+  await redis.zadd('leaderboard', score, userName);
+}
+
+/**
+ * @param string userName
+ * @return int
+ */
+exports.getScoreInLeaderboard = async (userName) => {
+  return await redis.zscore('leaderboard', userName);
+}

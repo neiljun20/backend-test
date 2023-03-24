@@ -8,7 +8,7 @@ module.exports = sequelize.define('score', {
     allowNull: false,
     primaryKey: true
   },
-  userId: {
+  user: {
     type: DataTypes.INTEGER,
     allowNull: false
   },
