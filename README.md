@@ -1,8 +1,8 @@
 # Backend Test
 
 ### Prerequisites
-* [PNPM](https://pnpm.io/installation#using-npm)
 * [Node.js](https://nodejs.org/en/download)
+* [PNPM](https://pnpm.io/installation#using-npm)
 
 ### Getting Started
 1. Clone the repository: `git clone https://github.com/neiljun20/backend-test.git`
